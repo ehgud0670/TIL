@@ -4,7 +4,7 @@
  
 - 메소드 표
 
-  |<center>리턴 타입</center>   | <center>메소드</center>  | <center>설명 </center> |
+  |<center> 리턴 타입 </center>   | <center> 메소드 </center>  | <center> 설명 </center> |
   |-----------| -------|----- |
   |int        |read()	 | 입력 스트림으로부터 1바이트를 읽고 읽은 바이트를 리턴한다.  |
   |int 			    |read(byte[] b)|	입력 스트림으로부터 읽은 바이트드을 매개값으로 주어진 byte[] b에 저장하고 실제로 읽은 바이트 수를 리턴한다. |
