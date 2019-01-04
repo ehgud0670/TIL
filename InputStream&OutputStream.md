@@ -3,11 +3,19 @@
 > FiledInputStream, BufferdInputStream, DataInputStream, 모두 InputStream 클래스를 상속하고 있다.
  
 - 메소드  
-  1. read()
-  2. read(byte[] b)
-  3. read(byte[] b, int off, int len)
-  4. close()
+  read()
+  read(byte[] b)
+  read(byte[] b, int off, int len)
+  close()
 
 # OutputStream
-> 출력 스트림
-- 
+> 바이트 기반 출력 스트림의 최상위 클래스로 추상 클래스이다. 최상위 클래스이므로 
+> FiledOutputStream, BufferdOutputStream, DataOutputStream, 모두 OutputStream 클래스를 상속하고 있다.
+ 
+- 메소드
+  write(int b)
+  write(byte[] b)
+  write(byte[] b, int off, int len)
+  flush()
+  close()
+  
