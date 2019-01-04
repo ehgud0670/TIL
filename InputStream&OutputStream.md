@@ -3,8 +3,8 @@
 > FiledInputStream, BufferdInputStream, DataInputStream, 모두 InputStream 클래스를 상속하고 있다.
  
 - 메소드 표
-  리턴 타입 | 메소드 | 설명 |
-  -------- | -------|------|
+  |리턴 타입 | 메소드 | 설명 |
+  |-------- | -------|----- |
   read()
   read(byte[] b)
   read(byte[] b, int off, int len)
