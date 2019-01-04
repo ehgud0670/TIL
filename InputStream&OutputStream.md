@@ -33,6 +33,6 @@
 ## 코드
 ![image](https://user-images.githubusercontent.com/38216027/50676126-0b936c00-1036-11e9-9a70-5b93f24c4dfe.png)  
 ## 실행화면 
-![Uploading image.png…]()
+![image](https://user-images.githubusercontent.com/38216027/50676198-704ec680-1036-11e9-9009-d290ee0dec4f.png)
 
 ## 2019.01.04
