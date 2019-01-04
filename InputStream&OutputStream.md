@@ -35,4 +35,4 @@
 ## 실행화면 
 ![image](https://user-images.githubusercontent.com/38216027/50676198-704ec680-1036-11e9-9009-d290ee0dec4f.png)
 
-## 2019.01.04
+## 2주차 2019.12.31 ~ 2019.01.04
