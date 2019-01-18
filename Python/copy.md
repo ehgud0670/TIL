@@ -10,15 +10,21 @@ b = [1,2,3]이 되어 아무 문제없이 복사가 되었다고 생각할 수 �
 
 그러므로 파이썬의 독립적인 copy 방식을 설명해보겠다.
 ## ①[:] 이용하기
+
+```python
 a = [1,2,3]<br>
 b = a[:]  //a 리스트를 전체 복사하여 b에 대입 <br>
 a[1] =4 //assign <br>
 print(a) = [1,4,3] <br>
 print(b) = [1,2,3] <br>
 =>독립적으로 복사가 됨을 알 수 있다.
+```
 
 ## ②copy 모듈 이용하기 
+
+```python
 from copy import copy <br>
 b = copy(a) <br>
 print(b is a) = False <br>
 => 또한 독립적으로 복사가 된다. <br> 
+```
