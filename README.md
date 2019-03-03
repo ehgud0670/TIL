@@ -1,4 +1,3 @@
 # TIL
 
-Today I Learned 
-\n by kimdo
+Today I Learned.
