@@ -1,4 +1,4 @@
 # TIL
 
 Today I Learned 
-by kimdo
+\n by kimdo
