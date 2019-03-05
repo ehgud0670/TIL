@@ -180,4 +180,29 @@ int sosimple(void){
 ```
 
 09-4 재귀함수에 대한 이해(Recursive)
+```c  
+# include <stdio.h>
 
+void recursive(int n)
+{
+  if(n==0)
+    return ; //재귀 탈출
+  printf("recursive call: %d\n",n);
+  recursive(n-1); //함수를 처리하는 도중 recursive를 다시 호출하여 계속 recursive 하게 처리한다.   
+  printf("hello: %d\n", n);//recursive를 나와서 뒤의 구문을 처리한다.
+}
+int main(void){
+
+  recursive(3); 
+
+  return 0;
+}
+```
+=> 결과 <br>
+recursive call: 3 <br>
+recursive call: 2 <br>
+recursive call: 1 <br>
+hello: 1 <br>
+hello: 2 <br>
+hello: 3 <br>
+=> 함수의 호출은 스택의 특성을 보임을 알 수 있다.(다시 공부하기)
