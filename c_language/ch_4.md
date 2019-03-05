@@ -23,15 +23,15 @@
    (3) KB = 1024Byte
    (4) MB = 1024KB
    (5) GB = 1024MB
- | 단위 | 나타낼 수 있는 크기|
- |------|--------------------|
- | 1bit : x |  2^1 = 2|
- | 2bit : xx |  2^2 = 4|
- | 4bit : xxxx| 2^4 = 16|
- | 1byte :xxxxxxxx | 2^8 = 256 |
- | 2byte : xxxxxxxx | 2^16 = 65,536|
- | 4byte : xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx | 2^32= 4,294,967,296 |
- | 8byte  | 2^64 |
+| 단위 | 나타낼 수 있는 크기|
+|------|--------------------|
+| 1bit : x |  2^1 = 2|
+| 2bit : xx |  2^2 = 4|
+| 4bit : xxxx| 2^4 = 16|
+| 1byte :xxxxxxxx | 2^8 = 256 |
+| 2byte : xxxxxxxx | 2^16 = 65,536|
+| 4byte : xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx | 2^32= 4,294,967,296 |
+| 8byte  | 2^64 |
 
 ==> int는 정수 자료형으로 int로 cpu(컴퓨터)의 주소를 모두 나타낼 수 있어야 한다.
 따라서 16bit 주소 체계의 cpu는 int의 크기가 2byte(16bit),
