@@ -1,11 +1,3 @@
-int64_t: 8
-int16_t: 2
-kimdo@ubuntu:~/thethelab.io/0228$ vi 2.c
-kimdo@ubuntu:~/thethelab.io/0228$ gcc -o prog 2.c
-kimdo@ubuntu:~/thethelab.io/0228$ ./prog
-int32_t: 4 byte
-int64_t: 8 byte
-int16_t: 2 byte
 # chapter 4
 ## 데이터 표현 방식의 이해 
 
