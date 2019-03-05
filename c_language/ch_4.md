@@ -34,7 +34,7 @@
 | 4byte : xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx | 2^32= 4,294,967,296 |
 | 8byte  | 2^64 |
 
-==> int는 정수 자료형으로 int로 cpu(컴퓨터)의 주소를 모두 나타낼 수 있어야 한다.
+==> int는 정수 자료형으로 int로 cpu(컴퓨터)의 주소를 모두 나타낼 수 있어야 한다. (? 이거 다시 한번 물어보기)
 따라서 16bit 주소 체계의 cpu는 int의 크기가 2byte(16bit),
        32bit 주소 체계의 cpu는 int의 크기가 4byte(32bit),
        64bit 주소 체계의 cpu는 int의 크기가 8byte(64bit) 이어야 한다. 
