@@ -18,11 +18,29 @@
 ```
 
  데이터 단위:
-   1. Bit = 0,1 을 표현할 수 있는 최소 단위
-   2. Byte = 8Bit
-   3. KB = 1024Byte
-   4. MB = 1024KB
-   5. GB = 1024MB
+   (1) Bit = 0,1 을 표현할 수 있는 최소 단위
+   (2) Byte = 8Bit
+   (3) KB = 1024Byte
+   (4) MB = 1024KB
+   (5) GB = 1024MB
+ | 단위 | 나타낼 수 있는 크기|
+ |------|--------------------|
+ | 1bit : x |  2^1 = 2|
+ | 2bit : xx |  2^2 = 4|
+ | 4bit : xxxx| 2^4 = 16|
+ | 1byte :xxxxxxxx | 2^8 = 256 |
+ | 2byte : xxxxxxxx | 2^16 = 65,536|
+ | 4byte : xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx | 2^32= 4,294,967,296 |
+ | 8byte  | 2^64 |
+
+==> int는 정수 자료형으로 int로 cpu(컴퓨터)의 주소를 모두 나타낼 수 있어야 한다.
+따라서 16bit 주소 체계의 cpu는 int의 크기가 2byte(16bit),
+       32bit 주소 체계의 cpu는 int의 크기가 4byte(32bit),
+       64bit 주소 체계의 cpu는 int의 크기가 8byte(64bit) 이어야 한다. 
+       그래서 int의 크기가 계속 변하니 cpu에 맞는 자료형이 생긴것 이다.
+       그게 바로 int16_t, int32_t, int64_t
+
 
 2. 정수와 실수의 표현방식
+
 3. 비트연산자
