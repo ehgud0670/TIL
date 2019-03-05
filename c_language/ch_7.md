@@ -20,7 +20,39 @@ int main(void){
 ```
 
 07-2 do-while문
+while문과 달리 조건과 관계없이 최소한 한번은 실행되는 반복문
+```c
+# include <stdio.h>
 
+int main(void){
+  
+  int total=0, num=0;
 
+  do
+  {
+  	printf("정수 입력(0이면 quit): ");
+  	scanf("%d", &num);
+  	total += num;
+	} while(num!=0);
+
+  return 0;
+}
+```
 
 07-3 for문
+```c
+# include <stdio.h>
+
+int main(void){
+  
+  for(int num=0; num<3; num++)
+	{
+    printf("thethelab.io\n");
+	}
+
+  return 0;
+}
+```
+   1. int num=0 에 해당하는 초기화는 반복문의 시작에 앞서 딱 1회 진행된다.
+   2. num<3 에 해당하는 조건은 매 반복문의 시작에 앞서 진행된다.
+   3. num++ 에 해당하는 증감연산은 반복영역을 실행한 후에 진행된다. 
