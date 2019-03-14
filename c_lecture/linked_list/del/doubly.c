@@ -55,6 +55,7 @@ int del_order(Node *head){
 	  printf("error! 헤드를 삭제하지마십시오.\n");
 	  return -1;
 	}
+
   del_rear(current);    
 
 }
@@ -214,4 +215,5 @@ int main(){
   print_list(&head1,1);
   print_list(&head2,2);
   return 0;
+
 }
