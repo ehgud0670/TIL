@@ -19,7 +19,7 @@ void __del_node(Node *prev, Node *next, Node *delNode){
 
   prev-> next = next;
   next -> prev = prev;
-  delNode -> prev = NULL;  //헤드를 삭제하면 큰일납니다. 
+  delNode -> prev = NULL;  //헤드 삭제시 print_list()할때 segmentation error(core dumped!) 발생하니 주의 할것.  
   delNode -> next = NULL;
 
 }
@@ -171,6 +171,7 @@ void print_list(Node *head, int number){
 
 
 int main(){
+
   Node node_1 ={1,NULL}; 
   Node node_2 ={1,NULL}; 
 //  Node *HEAD1 = &head1; 
