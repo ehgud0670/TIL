@@ -9,42 +9,41 @@
 # define MAX 10000
 # define WORD_SIZE 100
 
-
+Node head={&head,&head};  
+//Node head1={&head1,&head1};  //CellDx
+//Node head2={&head2,&head2};  //Sports Car
+//Node head3={&head3,&head3};  //SUV
+//Node head4={&head4,&head4};  //Wagon
+//Node head5={&head5,&head5};  //Minivan
+//Node head6={&head6,&head6};  //Pickup
+//Node head7={&head7,&head7};  //AWD
+//Node head8={&head8,&head8};  //RWD
 
 /*
-typedef struct car{
+Node* checkHead(int kind_idx){
+
+  if(kind_idx == 1 )
+    return &head1;
+  else if(kind_idx == 2)
+  	return &head2;
+  else if(kind_idx == 3)
+  	return &head3;
+  else if(kind_idx == 4)
+  	return &head4;
+  else if(kind_idx == 5)
+  	return &head5;
+  else if(kind_idx == 6)
+  	return &head6;
+  else if(kind_idx == 7)
+  	return &head7;
+  else 
+  	return &head8;
   
-  char name[32];
-  char kind[2][32];
-  int retail_price;
-  int dealer_cost;
-  double engine_size;
-  int weight;
-  int width;
-
-}Car;
-
-typedef struct kind{
- 
- int idx;
- char name[32];
-
-}Kind;
-
+}
 */
-
-Node head1={&head1,&head1};  //CellDx
-Node head2={&head2,&head2};  //Sports Car
-Node head4={&head4,&head4};  //Wagon
-Node head5={&head5,&head5};  //Minivan
-Node head6={&head6,&head6};  //Pickup
-Node head7={&head7,&head7};  //AWD
-Node head8={&head8,&head8};  //RWD
-
-
 int main(){
-
-  Car car[ROW];
+  int i;
+  Car *car[ROW];
   Kind kind[10];
   int kcount;
   int car_count;
@@ -55,56 +54,63 @@ int main(){
   int ES;//EngineSize
   int weight;
   int width;
-  
-  
+    
   int option;
+  int kind_idx;
+  int sel_opt;
 
-  kcount = set_Head( &name,kind,&RP,&DC,&ES,&weight,&width);   
-/*
-  count = 0 ;
-  while(fgets(string,MAX, stdin) != NULL){
-    str[count] =(char*)malloc(sizeof(char)*MAX);
-    strcpy(str[count],string);
-    count++;
+  FILE *fp = fopen("car_data.csv","r");
+  if(fp ==NULL){
+    printf("error! file not exist...\n");
+    return 1;
 	}
-	*/
- // Car *car;
-  car_count=set_Car(car,name,kind,kcount,RP,DC,ES,weight,width);
-  
-  printf("총 %d개의 데이터가 로드되었습니다.\n", car_count);  
-  //  fflush(stdout);
-  // while(getchar()!=EOF);
-//  fclose(stdin);
-  //fopen(stdin,"r");
 
+  kcount = set_Head(fp, &name,kind,&RP,&DC,&ES,&weight,&width);   
+  
+  car_count=set_Car(fp,car,name,kind,kcount,RP,DC,ES,weight,width);
+
+  // 연결리스트 만들기
+  for(i=0;i<car_count;i++)
+    insert_front(&head,&(car[i]->links));
+  printf("총 %d개의 데이터가 로드되었습니다.\n", car_count);  
+ 
+  
+  // 옵션
+  while(1){
     // 첫번째
     printf("1. 검색\n"); 
     printf("2. 종료\n"); 
-    printf("선택> "); 
-    option=fgetc(stdin);
-    putchar(option);
-    /*
-    scanf("%s",option);
-    if(atoi(option) == 2)
-  	  printf("break\n");
-  	  */
-/*
+    printf("선택> ");
+    scanf("%d", &option); 
+    if(option == 2)
+    	break;
     // 두번째
-    printf("선택> "); 
-    fgets(option,5,stdin);
-
+    kind_idx = select_Kind(kind,kcount);
+/*    
+    for(i=0;i<car_count;i++){
+      if(strcmp(car[i].kind1,kind[kind_idx].name)==0 )
+        	insert_front(checkHead(kind_idx), &(car[i].links));
+      if(strcmp(car[i].kind2, kind[kind_idx].name)==0) 
+        	insert_front(checkHead(kind_idx), &(car[i].links));
+			
+			
+    }
+    */
+    //print_list(&head);
     // 세번째
-    printf("선택> "); 
-    scanf("%s",option);
-   
-    // 네번째 
+    sel_opt=select_Info(); 
+
+    // 네번째
+    sort(&head,sel_opt,kind_idx, kind, car_count);
+    
+    // 다섯번째 
     printf("파일로 저장하시겠습니까?\n");
     printf("1. 예 \n");
     printf("2. 아니오 \n");
     printf("선택> "); 
-    scanf("%s",option);
-*/  
-
+    scanf("%d",&option);
+  }
+  fclose(fp);
 
   return 0;
 }

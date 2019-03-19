@@ -12,7 +12,8 @@ typedef struct node{
 typedef struct car{
   
   char name[32];
-  char kind[2][32];
+  char kind1[32];
+  char kind2[32];
   int retail_price;
   int dealer_cost;
   double engine_size;
