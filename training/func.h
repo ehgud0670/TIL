@@ -1,7 +1,7 @@
 # ifndef __FUNC_H__
 # define __FUNC_H__
 
-void print_car( Car* car, int num);
+void print_car( Car* car, int num, int flag, char *s);
 int compare1(const void *a,const void *b);
 int compare2(const void *a,const void *b);
 void print_list(Node *head);

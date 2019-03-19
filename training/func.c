@@ -12,13 +12,17 @@
 # define list_entry(ptr,type,member) \
     (type*)((char*)ptr - (unsigned long)(&(((type*)0)->member)))
 
-void print_car( Car* car, int num){
+void print_car( Car* car, int num, int flag, char *s){
   int i;
+	if(s == NULL){
+    printf("|No|  Name                 | kind | retail_price | dealer_cost | engine_size | weight | width |\n");
   for(int i=0; i<num; i++){
   	printf("%-3d ", i+1);
     printf("%-40s ", car[i].name);
-    printf("%-15s ", car[i].kind1);
-    printf("%-15s ", car[i].kind2);
+    if(flag == 1)
+      printf("%-15s ", car[i].kind2);
+    else
+      printf("%-15s ", car[i].kind1);
     printf("%-7d ", car[i].retail_price);
     printf("%-7d ", car[i].dealer_cost);
     printf("%-2lf ", car[i].engine_size);
@@ -28,7 +32,29 @@ void print_car( Car* car, int num){
 	  printf("\n");
 	}
 	printf("\n");
+  }
+  else{
+    FILE *wp = fopen(s,"w");
+    fprintf(wp,"|No|  Name                 | kind | retail_price | dealer_cost | engine_size | weight | width |\n");
+    for(int i=0; i<num; i++){
+  	  fprintf(wp,"%-3d ", i+1);
+      fprintf(wp,"%-40s ", car[i].name);
+      if(flag == 1)
+        fprintf(wp,"%-15s ", car[i].kind2);
+      else
+        fprintf(wp,"%-15s ", car[i].kind1);
+        fprintf(wp,"%-7d ", car[i].retail_price);
+        fprintf(wp,"%-7d ", car[i].dealer_cost);
+        fprintf(wp,"%-2lf ", car[i].engine_size);
+        fprintf(wp,"%-4d ", car[i].weight);
+        fprintf(wp,"%-2d ", car[i].width);
 
+	  fprintf(wp,"\n");
+	}
+	  fprintf(wp,"\n");
+    fclose(wp);
+
+	}
 
 }
 
@@ -40,7 +66,11 @@ void sort(Node *head, int sel_opt, int kind_idx, Kind *kind, int car_count){
   int kind_num;
   Car car[car_count];
   int i;
+  int flag=0;
+  int option;
 
+  if(strcmp(kind[kind_idx].name, "AWD") ==0 || strcmp(kind[kind_idx].name,"RWD") == 0)
+  	flag = 1;
   printf("1. 오름차순 정렬\n");
   printf("2. 내림차순 정렬\n");
 
@@ -52,7 +82,8 @@ void sort(Node *head, int sel_opt, int kind_idx, Kind *kind, int car_count){
   while(current!=head){  
     Car *vehicle = list_entry(current, Car,links); 
     if(strcmp(vehicle->kind1, kind[kind_idx].name)==0 ||strcmp(vehicle->kind2, kind[kind_idx].name)==0){
-     
+      
+      
       //car[sort_count] = (Car*)malloc(sizeof(Car));
   //    car[sort_count]->kind1 = (char*)malloc(sizeof(char)*32);
   //    car[sort_count]->kind2= (char*)malloc(sizeof(char)*32);
@@ -120,10 +151,24 @@ void sort(Node *head, int sel_opt, int kind_idx, Kind *kind, int car_count){
       qsort(car,sort_count, sizeof(Car),compareWi2);
   }
   printf("\n\n"); 
-  print_car(car,sort_count);
+  print_car(car,sort_count,flag,NULL);
    //for(i=0; i<sort_count;i++)
      //free(car[i]);
      
+  // 다섯번째 
+  printf("파일로 저장하시겠습니까?\n");
+  printf("1. 예 \n");
+  printf("2. 아니오 \n");
+  printf("선택> "); 
+  scanf("%d",&option);
+
+  char filename[32];
+  if(option==1){
+    printf("파일이름> ");
+    scanf("%s", filename);
+    print_car(car,sort_count,flag,filename);
+	}
+  
 }
 
 int compareRe1(const void *a,const void *b){

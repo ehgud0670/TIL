@@ -103,12 +103,6 @@ int main(){
     // 네번째
     sort(&head,sel_opt,kind_idx, kind, car_count);
     
-    // 다섯번째 
-    printf("파일로 저장하시겠습니까?\n");
-    printf("1. 예 \n");
-    printf("2. 아니오 \n");
-    printf("선택> "); 
-    scanf("%d",&option);
   }
   fclose(fp);
 
