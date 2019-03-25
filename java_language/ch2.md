@@ -54,6 +54,7 @@ int value = 20;
 double doubleValue = value; // 20.0으로 자동 타입 변환이 일어난다.
 ```
 아래의 표처럼 byteValue는 int타입 intValue로 자동 타입 변환이 되어 크기가 1byte에서 4byte으로 확장된다.(byte -> int) <br>
+
 |byte 타입|
 |---------|
 |00001010 |
