@@ -30,3 +30,37 @@
 | double | 실수 | 8byte = 64bit | 오차가 있는 값의 범위 |
 | boolean | 논리| 1byte = 8bit  | true, false  |
 
+
+### 타입 변환
+1. 자동 타입 변환(Promotion)
+
+=> 자동 타입 변환(Promotion)은 프로그램 실행 도중에 자동적으로 타입 변환이 일어나는 것을 말한다. <br>
+자동 타입 변환은 작은 크기를 가지는 타입이 큰 크기를 가지는 타입에 저장될 때 발생한다. <br>
+
+* 큰 크기 타입 = (자동 형 변환) 작은 크기 타입; 
+
+크기별 type<br>
+```java
+ byte(1) < short(2) < int(4) < long(8) < float(4) < double(8)
+```
+=> float은 long보다 더 넓은 범위의 수를 표현할 수 있기 때문에 long보다 큰 크기 타입이다 . 즉 정수 타입 < 실수 타입 <br>
+
+
+```java
+byte byteValue = 10;
+int intValue = byteValue; // 자동 타입 변환이 일어난다.
+
+int value = 20;
+double doubleValue = value; // 20.0으로 자동 타입 변환이 일어난다.
+```
+아래의 표처럼 byteValue는 int타입 intValue로 자동 타입 변환이 되어 크기가 1byte에서 4byte으로 확장된다.(byte -> int) <br>
+|byte 타입|
+|---------|
+|00001010 |
+
+|int 타입| | | |
+|--------|-|-|-|
+|00000000|00000000|00000000|00001010|
+
+2. 강제 타입 변환(Casting)
+
