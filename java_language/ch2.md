@@ -75,6 +75,17 @@ byte byteValue = 4;
 char charValue = (char)byteValue; // 해결
 ```
 
+연산식에서의 자동 타입 변환.
+```java
+int intValue = 10;
+double doubleValue = 5.5;
+double result = intValue + doubleValue;  // result = 15.5 
+               //10 -> 10.0으로 자동 형변환
+```
+==> 연산은 기본적으로 같은 타입의 피연산자(operand)간에만 수행되기 때문에 서로 다른 타입의 피연산자가 있을 경우,<br>
+두 피연산자 중 크기가 큰 타입으로 자동 형 변환된 후 연산을 수행한다.<br>
+위의 경우도 intValue가 연산시 double형으로 자동형변환되어 10->10.0 이 되었고 최종적으로 result 의 값은 15.5가 되었다.<br>
+
 2. 강제 타입 변환(Casting)
 큰 크기의 타입은 작은 크기의 타입으로 자동 형 변환을 할 수 없다. <br>
 이 이치는 큰 그릇에 있는 물을 작은 그릇 안에 모두 담을 수 없는 것과 같은 이치이다. <br>
@@ -88,11 +99,49 @@ public class Casting {
 
     public static void main(String[] args) {
         int intValue = 103029770;
-        byte byteValue = (byte)intValue;
-
+        byte byteValue = (byte)intValue;  // 의미없는 강제 형 변환
+        
         System.out.printf("intValue: %d \n",intValue); // 103029770
         System.out.printf("byteValue: %d \n",byteValue); // 10 => 값이 잘려 나간다. 
+        
+        int a = 10;
+        byte b = (byte)a;  // 의미있는 강제 형 변환
+        
+        System.out.printf("intValue: %d \n",intValue); // 10
+        System.out.printf("byteValue: %d \n",byteValue); // 10 => 값이 잘려 나가지 않는다. 
     }
 }
 ```
+=> 4byte의 크기를 가진 int형 변수 intValue는 103029770을 온전히 다 저장할 수 있지만, <br>
+intValue를 강제 형 변환하면 4byte 중 MSB 쪽 3byte가 날라가므로 110001001000001110000001010(2) 에서  00001010(2)만 보존된다. <br>
+따라서 byteValue에 00001010(2)만 assign 하였으므로 값은 10이 된다. <br>
+
+따라서 intValue의 값이 byteValue로 온전히 보존이 안된채로 assign되므로 이는 강제 형 변환을 하면 안되는 case이다. <br>
+intValue의 값이 byte의 범위에 있는 값이라면 강제 형변환이 의미가 있어지게 된다.<br>
+
+* 강제 형 변환(Casting)의 주의할 점: 사용자로부터 입력받은 값을 변환할 때 값의 손실이 발생하지 않도록 주의하자.
+=> 아래의 경우처럼 올바른 타입 변환인지 검사할 수 있다.<br>
+
+```java
+import java.util.Scanner;
+
+public class CheckValueBeforeCasting {
+    public static void main(String[] args) {
+        int i;
+        byte j;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("i의 값을 입력하시오: ");
+
+        i = sc.nextInt();
+        if(i > Byte.MAX_VALUE || i < Byte.MIN_VALUE) {
+            System.out.println("byte 타입으로 변환할 수 없습니다.");
+        }
+        else{
+          j = (byte) i; //바이트 단위로 강제 형변환(Casting)
+            System.out.printf("j= %d \n", j);
+        }
+    }
+}
+```
+
 
