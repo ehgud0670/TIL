@@ -53,7 +53,9 @@ int intValue = byteValue; // 자동 타입 변환이 일어난다.
 int value = 20;
 double doubleValue = value; // 20.0으로 자동 타입 변환이 일어난다.
 ```
-아래의 표처럼 byteValue는 int타입 intValue로 자동 타입 변환이 되어 크기가 1byte에서 4byte으로 확장된다.(byte -> int) <br>
+아래의 표처럼 byteValue는 int형 intValue로 자동 타입 변환이 되어 크기가 1byte에서 4yte으로 확장되고,(byte -> int) <br>
+그 값이 intValue에 assign 된다. (원래 byteValue는 byte타입을 유지 한다.) <br>
+
 
 |byte 타입|
 |---------|
@@ -63,5 +65,34 @@ double doubleValue = value; // 20.0으로 자동 타입 변환이 일어난다.
 |--------|-|-|-|
 |00000000|00000000|00000000|00001010|
 
+자동 타입 변환의 단 하나의 예외:<br>
+=> char는 byte 보다 크므로 byte가 char로 자동 타입 변환되어야 하는게 정상이다.<br>
+하지만 byte는 음수도 범위에 포함되지만 char의 범위 중 음수가 없으므로 컴파일 오류가 발생한다 <br>
+이럴땐 강제 타입 변환(castiong)을 통해 해결한다. <br>
+```java
+byte byteValue = 4;
+//char charValue = byteValue; // 컴파일 에러 
+char charValue = (char)byteValue; // 해결
+```
+
 2. 강제 타입 변환(Casting)
+큰 크기의 타입은 작은 크기의 타입으로 자동 형 변환을 할 수 없다. <br>
+이 이치는 큰 그릇에 있는 물을 작은 그릇 안에 모두 담을 수 없는 것과 같은 이치이다. <br>
+하지만 큰 그릇을 작은 그릇 사이즈로 쪼개어서 한 조각만 작은 그릇에 넣는다면 가능하다. <br>
+이것이 바로 강제 형 변환(Casting)이다. 
+
+* 작은 크기 타입 = (작은 크기 타입) 큰 크기 타입 => 강제 형 변환
+
+```java
+public class Casting {
+
+    public static void main(String[] args) {
+        int intValue = 103029770;
+        byte byteValue = (byte)intValue;
+
+        System.out.printf("intValue: %d \n",intValue); // 103029770
+        System.out.printf("byteValue: %d \n",byteValue); // 10 => 값이 잘려 나간다. 
+    }
+}
+```
 
