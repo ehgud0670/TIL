@@ -194,6 +194,7 @@ intArray[0] = 10; //NullPointerException. => null 인 상태에서 element의 �
 ```
 
 > 값 목록으로 배열 생성
+
 ```java
 int[] a ={1,2,3};
 // 지역 변수 a는 스택에 생성됨. a[0], a[1], a[2]는 객체로써 힙 영역에 생성되고 값이 각각 1,2,3 으로 할당됨.
@@ -217,7 +218,8 @@ int result = add(new int[] {95,85,90}) // 정상작동
 ```
 
 > new 연산자로 배열 생성
- * 값의 목록을 가지고 있지 않지만, 향후 값들을 저장할 배열을 미리 만들고 싶다면 new 연산자로 다음과 같이 배열 객체를 생성시킬 수 있다.
+
+* 값의 목록을 가지고 있지 않지만, 향후 값들을 저장할 배열을 미리 만들고 싶다면 new 연산자로 다음과 같이 배열 객체를 생성시킬 수 있다.
  
 ```java
  타입[변수] = new 타입[길이];
@@ -225,6 +227,7 @@ int result = add(new int[] {95,85,90}) // 정상작동
 ```
 
 > 배열 길이 
+
 배열변수.length로 길이측정가능하다. <br>
 ```java
 int[] arr = {1,2,3};
@@ -232,6 +235,7 @@ int num = arr.length; // num은 3이다.
 ```
 
 > 커맨드 라인 입력
+
 ```java
 public static void main(String[] args)
 ```
@@ -253,12 +257,14 @@ public class Args {
 => result: 30 <br>
 
 > 다차원 배열
+
 ```java
 int[][] scores = new int[2][3];
 ```
 => java도 배열이 decay가 되는지 물어보기 (될것같다.) <br> 
 
 > 객체를 참조하는 배열
+
 * 기본 타입(byte, char, short, int, long, float, double, boolean) 배열은 각 항목에 직접 값을 갖고 있지만,(그래도 힙 영역이다.) 참조 타입(클래스, 인터페이스) 배열은 각 항목에 객체의 번지를 가지고 있다. 
 c언어에서 포인터 배열과 같은 느낌 <br>
 ```java
@@ -268,6 +274,7 @@ strArray[1] = new String("java"); //객체를 참조
 ```
 
 > 배열 복사 
+
 * 배열은 한번 생성하면 크기를 변경할 수 없기때문에 더 많은 공간이 필요하다면 더 큰 배열을 새로 만들고 이전 배열을 복사한다.
 => for문을 이용해 복사하거나, System.arraycopy()을 이용해 배열을 복사한다. <br>
 
@@ -312,6 +319,7 @@ public class Copy {
 
 ```
 > 향상된 for문
+
 * 향상된 for문은 반복 실행을 하기 위해 카운터 변수와 증감식을 사용하지 않는다. **배열 및 컬렉션 항목의 개수만큼 반복하고**, 자동적으로 for문을 빠져나간다. 
 ```java
 for( 타입 변수 : 배열){
@@ -339,10 +347,46 @@ public class Arrays {
 ## 열거 타입 
 
 > 열거 타입 선언
+
+* 열거타입을 선언하기 위해서는 먼저 열거 타입의 이름을 정하고 열거 타입 이름으로 소스 파일(.java)을 생성해야 한다. 
+```java
+public enum Week {
+    MONDAY, // c와는 다르게 따로 숫자값을 갖고 있지 않는 열거 상수 인가 보다.
+    TUESDAY, // 열거 상수는 객체이다. 힙 영역에 있다. 
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY,
+    SUNDAY
+}
+// 이렇게만 작성하였으면 파일이름은 Week.java이어야 한다.
+```
+
 > 열거 타입 변수
-> name() 메소드
-> ordinal() 메소드
-> compareTo() 메소드
-> valueOf() 메소드 
-> values() 메소드
+
+```java
+public class Enumtest {
+    public static void main(String[] args) {
+        Week today = Week.FRIDAY; // 메소드로 불러들인 FRIDAY는 메소드 영역에 있는 힙 영역의 FRIDAY 객체를 참조한다.
+        // 따라서  변수 today 와 메소드 영역의 열거 상수 Week.FRIDAY 는 FRIDAY 객체를 같이 참조 한다.
+        System.out.println(today);
+        Week week2 = null; // 열거변수도 reference type 이므로 null 값 지정가능하다.
+
+    }
+}
+``` 
+
+> 열거 타입의 name() 메소드
+
+* 열거 객체가 가지고 있는 문자열을 리턴한다.
+```java
+ Week today = Week.SUNDAY;
+ String name = today.name(); // SUNDAY 값 리턴되서 name 변수에 저장.
+```
+> 열거 타입의 ordinal() 메소드
+ *  전체 열거 객체 중 몇 번째 열거 객체인지 알려준다. 
+```java
+  Week today = Week.SUNDAY;
+  int ordinal = today.ordinal(); // enum은 0부터 시작하므로 답은 6. 6 리턴되서 ordinal에 저장.
+```
 
