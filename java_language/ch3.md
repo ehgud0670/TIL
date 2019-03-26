@@ -140,8 +140,8 @@ public class Conditional {
         Scanner sc = new Scanner(System.in);
 
         score = sc.nextInt();
-        char grade = (score > 90) ? 'A' : ((score >80) ? 'B':'C');
-        System.out.println(grade);
+        char grade = (score > 90) ? 'A' : ((score >80) ? 'B':'C');  // score가 90을 넘기면  'A' 산출 
+        System.out.println(grade);                    // 아니면 다시 오른쪽 삼항 연산자로 넘어가 80을 넘기면 'B' 아니면 'C' 산출.
     }
 }
 ```
