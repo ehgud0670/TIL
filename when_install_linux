@@ -7,7 +7,7 @@
 =>* putty가 되려면 리눅스에 ssh을 설치해야 한다. (sudo apt install ssh)
 7. vim 설치.(sudo apt install vim)
 8. tree 설치.(sudo apt install tree)
-8. ~./vimrc 고쳐서 vim 꾸미기 
+8. ~/.vimrc 고쳐서 vim 꾸미기 
 9. 네트워크 다음카카오(daum_kakao로 바꾸기)
 => 속도가 더 빠르니 바꾸도록 하자.
 방법: %s/kr.archive.ubuntu.com/ftp.daumkakao.com
