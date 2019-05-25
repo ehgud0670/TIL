@@ -3,4 +3,4 @@
 
 **위 내용은 '이펙티브 자바 3판' 을 읽고 주관적으로 정리한 내용입니다.**
 
-![이펙티브자바](https://user-images.githubusercontent.com/38216027/58365029-0e193400-7ef9-11e9-8d96-9680a53e8999.jpg)
+![8966262287_1](https://user-images.githubusercontent.com/38216027/58365067-c21abf00-7ef9-11e9-89b4-2e2388cd9e4f.jpg)
