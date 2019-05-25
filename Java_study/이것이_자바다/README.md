@@ -1,3 +1,3 @@
 # [책] 이것이 자바다
 
-![1190308955_B](https://user-images.githubusercontent.com/38216027/58364828-da3c0f80-7ef4-11e9-8ccc-bf8f5880c8e2.jpg)
+![이것이_자바다](https://user-images.githubusercontent.com/38216027/58364934-0ce70780-7ef7-11e9-8e8e-a90e19fa3206.jpeg)
