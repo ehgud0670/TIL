@@ -1,6 +1,8 @@
+package item03;
+
 //public static final 필드 방식의 싱글턴
 public class Elvis {
-    public static final Elvis INSTANCE = new Elvis();
+    static final Elvis INSTANCE = new Elvis();
     private static int count;
 
     // 생성자는 private 으로 감춰둔다.
@@ -17,3 +19,5 @@ public class Elvis {
 
     }
 }
+
+// private 생성자는
