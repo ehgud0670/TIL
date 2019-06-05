@@ -1,10 +1,8 @@
-package item09;
-
-import java.awt.dnd.Autoscroll;
+package ac.kr.ajou.item09;
 
 public class MyResource implements AutoCloseable {
 
-    public void doSomething() throws FirstException{
+    public void doSomething() throws FirstException {
         System.out.println("doing something");
         throw new FirstException();
     }

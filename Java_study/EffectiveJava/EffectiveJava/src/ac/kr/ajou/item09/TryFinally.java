@@ -1,12 +1,6 @@
-package item09;
+package ac.kr.ajou.item09;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.FileInputStream;
-import java.io.OutputStream;
-import java.io.FileOutputStream;
+import java.io.*;
 
 public class TryFinally {
     private static final int BUFFER_SIZE = 1024;

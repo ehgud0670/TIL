@@ -1,4 +1,5 @@
-package item09;
+package ac.kr.ajou.item09;
+
 // try-with-resources 을 사용하면 자동으로 자원을 닫아 준다.
 // 또한 어디서 먼저 에러가 났는지 알 수 있고(close()메소드의 에러는 숨겨지기(suppressed) 때문이다.),
 // 가독성을 매우 높여준다는 큰 장점이 있다. => 자원 닫기를 해야 할 경우에 반드시 try-with-resources 문을 사용하자!

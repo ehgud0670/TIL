@@ -1,7 +1,7 @@
-package item04;
+package ac.kr.ajou.item04;
 
 public class UtilityClass {
-    // 기본 생성자가 만들어지는 것을 막는다 (인스턴스 화 방지용).
+    // 유틸 클래스라 인스턴스를 만들지 못하게 막았습니다.
     private UtilityClass(){
         throw new AssertionError();
     }

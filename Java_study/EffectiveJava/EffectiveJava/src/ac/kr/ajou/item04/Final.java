@@ -1,4 +1,4 @@
-package item04;
+package ac.kr.ajou.item04;
 
 // 정적 메서드는 final 클래스와 관련된 메서드들을 모아놓을 때도 사용한다.
 // final 클래스를 상속해서 하위 클래스에 메서드를 넣는 건 불가능하기 떼문이다.
@@ -13,7 +13,7 @@ public final class Final {
      private Final(){
         throw new AssertionError();
     }
-
-
-
+    public static String getName(){
+         return "final";
+    }
 }

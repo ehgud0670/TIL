@@ -1,4 +1,4 @@
-//package item04;
+package ac.kr.ajou.item04;//package item04;
 //
 //public class Example {
 //    public static void main(String[] args) {

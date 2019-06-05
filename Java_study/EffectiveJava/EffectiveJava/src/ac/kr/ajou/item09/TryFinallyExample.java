@@ -1,7 +1,5 @@
-package item09;
+package ac.kr.ajou.item09;
 
-
-import java.io.IOException;
 
 // try- finally 구문은 처음 발생한 에러의 정보를 get 할 수 없다.
 public class TryFinallyExample  {

@@ -1,4 +1,4 @@
-package item03;
+package ac.kr.ajou.item03;
 
 //public static final 필드 방식의 싱글턴
 public class Elvis {

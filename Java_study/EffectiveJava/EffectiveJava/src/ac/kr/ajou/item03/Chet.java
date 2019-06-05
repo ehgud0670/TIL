@@ -1,4 +1,4 @@
-package item03;
+package ac.kr.ajou.item03;
 
 //chetBaker
 public class Chet {
