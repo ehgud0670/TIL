@@ -1,4 +1,4 @@
-package ac.kr.ajou.item07;
+package ac.kr.ajou.item07.memoryleak;
 
 import java.util.Arrays;
 import java.util.EmptyStackException;

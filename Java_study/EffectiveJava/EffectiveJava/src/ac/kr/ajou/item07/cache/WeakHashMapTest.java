@@ -1,4 +1,4 @@
-package ac.kr.ajou.item07;
+package ac.kr.ajou.item07.cache;
 
 import java.util.WeakHashMap;
 
@@ -12,7 +12,7 @@ public class WeakHashMapTest {
         map.put(key1, "test a");
         map.put(key2, "test b");
 
-        key1 = null;
+        key1 = null; // null 말고도 Out of Scope 이 되는 경우 Strong reference 는 사라진다.
         System.gc(); // 강제 GC(Garbage Collector) 실행
         map.entrySet().forEach(System.out::println);
 

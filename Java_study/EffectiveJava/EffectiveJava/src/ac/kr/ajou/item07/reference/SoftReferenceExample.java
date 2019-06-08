@@ -1,4 +1,4 @@
-package ac.kr.ajou.item07;
+package ac.kr.ajou.item07.reference;
 
 import java.lang.ref.SoftReference;
 
