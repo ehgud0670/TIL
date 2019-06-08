@@ -1,9 +1,11 @@
-package ac.kr.ajou.item08;
+package ac.kr.ajou.item08.inheritance;
 
-public class Animal {
+class Animal {
+    static Animal animal;
 
 
-
-
+    void naked(){
+        System.out.println("no way!");
+    }
 
 }

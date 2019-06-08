@@ -1,4 +1,15 @@
-package ac.kr.ajou.item08;
+package ac.kr.ajou.item08.inheritance;
 
-public class Dog {
+class Dog extends Animal {
+
+    Dog() {
+        System.out.println("constructor");
+        throw new RuntimeException();
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        Animal.animal = this;
+        naked();
+    }
 }

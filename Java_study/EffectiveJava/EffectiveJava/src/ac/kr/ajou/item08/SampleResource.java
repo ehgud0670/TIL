@@ -41,7 +41,6 @@ public class SampleResource implements AutoCloseable {
     // note : 안전망 삼아서 finalize()에서 한번 더 close()를 호출한다.
     @Override
     protected void finalize() throws Throwable {
-        System.out.println("finalize()");
         if (!this.closed) {
             close();
         }
