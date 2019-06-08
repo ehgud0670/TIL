@@ -70,5 +70,4 @@ static String firstLineOfFile(String path, String defaultVal){
       return defaultVal; 
     }
 }
-
 ```
