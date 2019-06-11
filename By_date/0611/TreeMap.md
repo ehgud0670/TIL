@@ -87,7 +87,6 @@ public class TreeMapExample1 {
  **그렇지 않다면 저장하는 순 런타임 예외인 ClassCastException이 발생한다.
  그리고 OCP를 만족하려면 Comparable이 아닌 Comparator로 비교해야 함을 명심하자.**
  
- 
- 
+
    
    
