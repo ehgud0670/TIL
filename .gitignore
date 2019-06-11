@@ -1,5 +1,5 @@
 # file
-*workspace.xml
+*.xml
 
 # directory
 .idea/
