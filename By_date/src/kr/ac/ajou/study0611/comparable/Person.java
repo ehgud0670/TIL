@@ -1,10 +1,12 @@
-package kr.ac.ajou.study0611;
+package kr.ac.ajou.study0611.comparable;
 
 public class Person implements Comparable<Person> {
 
+    private String name;
     private int age;
 
-    Person(int age) {
+    Person(String name, int age) {
+        this.name = name;
         this.age = age;
     }
 
@@ -18,5 +20,10 @@ public class Person implements Comparable<Person> {
         } else {
             return -1;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "{ name: " + this.name + ",  age: " + this.age + "}";
     }
 }

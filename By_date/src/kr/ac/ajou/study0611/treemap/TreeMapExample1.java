@@ -1,4 +1,4 @@
-package kr.ac.ajou.study0611;
+package kr.ac.ajou.study0611.treemap;
 
 import java.util.Map;
 import java.util.TreeMap;

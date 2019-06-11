@@ -1,4 +1,4 @@
-package kr.ac.ajou.study0611;
+package kr.ac.ajou.study0611.hashmap;
 
 public class Student {
     private int sno;
