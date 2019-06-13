@@ -1,4 +1,4 @@
-package kr.ac.ajou.study0613;
+package kr.ac.ajou.study0613.string;
 
 public class StringExample2 {
     public static void main(String[] args) {

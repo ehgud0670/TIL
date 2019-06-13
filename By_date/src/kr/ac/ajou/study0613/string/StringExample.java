@@ -1,4 +1,4 @@
-package kr.ac.ajou.study0613;
+package kr.ac.ajou.study0613.string;
 
 import java.util.TreeSet;
 
