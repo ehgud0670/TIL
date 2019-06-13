@@ -61,13 +61,13 @@ public int compareTo(String anotherString) {
             }
             k++;
         }
-        // case k=0;
+        // case k = 0
         // 'A' == 'A'
-        // case k=1
+        // case k = 1
         // 'l' == 'l'
-        // case k=2
+        // case k = 2
         // 'x' == 'x'
-        // case k=3 
+        // case k = 3 
         // 'e' == 'e'
         // while 문 빠져나오고 return len1 - len2 ( 4 - 5 ) 
         // 이므로 -1을 리턴한다.
@@ -112,11 +112,11 @@ public int compareTo(String anotherString) {
             }
             k++;
         }
-        // case k=0;
+        // case k = 0;
         // 'G' == 'G'
-        // case k=1
+        // case k = 1
         // 'r' == 'r'
-        // case k=2
+        // case k = 2
         // 'o' != 'i'
         // 'o'의 아스키 코드값이 111, 'i'의 아스키 코드값이 105 이므로
         // return 111 - 105; ,즉 6을 리턴한다. 
