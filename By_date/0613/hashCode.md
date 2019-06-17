@@ -99,7 +99,7 @@ public class KeyExample {
 
 
 > HashSet이나 HashMap은 원소들을 자동 오름차순 정렬하는데 hashCode를 오버라이딩하지 않으면 정상적으로 정렬되지 않는다.
- 따라서 오버라이딩 하도록 하자.
+ 따라서 자동 정렬하고 싶다면 hashCode()를 오버라이딩 하도록 하자.
  
  
  HashSet
@@ -168,3 +168,5 @@ public class KeyExample {
 
 => 따라서 HashSet 이나 HashMap을 사용할 때 **정상적으로 자동 정렬이 잘 되도록 하기 위해서라도** 
 반드시 hashCode를 재정의하도록 하자.
+<br>=\> TreeSet, TreeMap 만 오름차순으로 자동 정렬되는 줄 알았는데, Test 해보니 HashSet 과 HashMap 도 
+hashCode를 오버라이딩 하면 오름차순 자동 정렬이 됨을 알 게 되었다. **물론 중복 저장을 피하기 위해 equals 도 오버라이딩 해야 한다.**  
