@@ -1,6 +1,8 @@
 # file
 *.xml
 *.iml
+*.out
+
 
 # directory
 .idea/
