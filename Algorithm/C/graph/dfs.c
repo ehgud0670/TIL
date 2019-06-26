@@ -161,12 +161,12 @@ void doDFS(int vertex_num){
 
 int main(){
 
-	addEdge(0,4,TRUE);
-	addEdge(0,5,TRUE);
-	addEdge(0,6,TRUE);
-	addEdge(4,1,TRUE);
-	addEdge(5,2,TRUE);
-	addEdge(6,3,TRUE);
+  addEdge(0,4,TRUE);
+  addEdge(0,5,TRUE);
+  addEdge(0,6,TRUE);
+  addEdge(4,1,TRUE);
+  addEdge(5,2,TRUE);
+  addEdge(6,3,TRUE);
 
   printLists();
   showAdjacentVertex(0);
