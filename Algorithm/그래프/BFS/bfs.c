@@ -142,10 +142,10 @@ void enqueueAdjacentVertex(int vertex_num){
 	while(cur){
 		int v = cur -> v;
 		int i;
-		int equalCheck = FALSE;
 		// check v is already visited 
 		if(visited[v] == FALSE){
 		// check v is already in the queue 
+		  int equalCheck = FALSE;
 			for(i=0;i<QUEUE_SIZE;i++){
 				if(v == queue[i]){
 					equalCheck = TRUE;
