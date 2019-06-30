@@ -39,4 +39,8 @@ int main(){
   printf("b = %c \n", *ptr2);
   printf("c = %f \n", *ptr3);
 }
+// 실행 결과
+// a = 5 
+// b = b 
+// c = 4.700000
 ```
