@@ -1,9 +1,9 @@
-# include <unistd.h>
-# include <sys/types.h>
-# include <sys/socket.h>
-# include <arpa/inet.h>
-# include <netinet/in.h>
-# include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <netinet/in.h>
+#include <stdio.h>
 
 int main(){
 
@@ -34,9 +34,6 @@ int main(){
 			break;
 		}
 		write(sock,buf,ret);
-
-
-
 	}
 
 	close(sock);
