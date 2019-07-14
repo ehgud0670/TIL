@@ -2,7 +2,7 @@
 *.xml
 *.iml
 *.out
-
+*.class
 
 # directory
 .idea/
