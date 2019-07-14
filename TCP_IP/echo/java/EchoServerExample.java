@@ -28,9 +28,9 @@ public class EchoServerExample {
 
 					os.write(buf, 0, len);
 				}
-			} catch(IOException e){
-				e.printStackTrace();
-			}
+			} 
+
+
 
 		} catch (IOException e) {
 			e.printStackTrace();
