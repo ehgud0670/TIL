@@ -6,7 +6,7 @@ int factorial_iter(int n){
 
   int i;
   int result = 1;
-  for(i=1; i<=n; i++){
+  for(i=n ;i>=1; i--){
     result *= i;
 	}
   
@@ -15,9 +15,9 @@ int factorial_iter(int n){
 
 
 int main(){
-
-  int result = factorial_iter(4);
-  printf("factorial_iter(4) is %d \n", result);
+  int num = 4;
+  int result = factorial_iter(num);
+  printf("factorial_iter(%d) is %d \n", num , result);
 
   return 0;
 }
