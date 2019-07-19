@@ -5,7 +5,7 @@ long long hanoi(int n){
   if( n == 1 ){
     return 1;
 	}
-	return 2*hanoi(n-1) + 1; 
+	return 1 + 2 * hanoi(n-1); 
 }
 
 int main(){
