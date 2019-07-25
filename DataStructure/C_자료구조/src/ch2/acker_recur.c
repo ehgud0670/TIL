@@ -19,8 +19,8 @@ int acker_recur(int m , int n){
 
 
 int main(){
-	int m = 2;
-	int n = 3;
+	int m = 3;
+	int n = 8;
   int result = acker_recur(m,n);
   printf("A(%d,%d) = %d \n", m,n, result);
   printf("count: %d\n", count);
