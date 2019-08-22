@@ -1,6 +1,5 @@
 ## ByteArray
 
-
 Server.java 
 ```java
 import java.io.*;
@@ -77,7 +76,7 @@ public class Client1 {
           // Decorator Pattern : 데코레이터 패턴
           ByteArrayOutputStream bos = new ByteArrayOutputStream(1024);
           DataOutputStream dos = new DataOutputStream(bos);
-          dos.writeInt(op);
+          dos.writeChar(op);
           dos.writeInt(lhs);
           dos.writeInt(rhs);
 
