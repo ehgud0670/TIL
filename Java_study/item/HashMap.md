@@ -153,3 +153,5 @@ public class HashMapExample2 {
 }
 
 ```
+
+## HashMap은 자동 정렬되지 않는다. 
