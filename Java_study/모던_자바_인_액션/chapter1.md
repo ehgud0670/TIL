@@ -136,6 +136,4 @@ public int compareUsingCustomerId(String inv1, String inv2){
 
 > 자바 8 스트림의 등장
 
-공유되지 않은 가변 데이터, 메서드
-
 자바 8 스트림을 이용하면 기존의 방법보다 쉽게 **병렬성**을 활용할 수 있다. 즉 synchronized 때문에 성능에 악영향 줄 필요가 없다는 뜻이다!
