@@ -53,8 +53,6 @@
 <br>=> LDA m ? A <- (m..m+2), where A, **m indicate a memory address** and register A, respectively.
 <br>=> STA m? m..m+2 <- (A)
 
-=> Load ? Store ????? **A? X ????**? ????. 
-
 * Integer Arithmetic operations : ADD, SUB , MUL, DIV
 <br>=> ADD m ? A <- (A) + (m..m+2)
 <br>=> SUB m ? A <- (A) - (m..m+2)
@@ -103,8 +101,6 @@ send or receive a byte of data
   * The same data formats as the standard version
   * **48-bit floating-point data type**, in addition
 
-=> SIC ? floating type ? ???? ??? SIC/XE ? floating type? ????.
-
 ### Instruction Formats 
 
 * Format 1 : No memory reference **(1 byte)**
@@ -137,7 +133,6 @@ send or receive a byte of data
   * Base relative addressing, when b = 1, p = 0 : TA = (B) + disp/addr
   * PC relative addressing, when b = 0, p = 1 : TA = (PC) + disp/addr 
 
-=> b ? p flag ? ?? ?? ????? b = 1, p = 1? ??? ??. ( pc ?? ???? ?? ??? ? ?? ?,  base register ?? ???? ??? ? ?? ?)
 
 * Direct addressing mode for Format 3 & 4 ( flag e = 0 || e = 1) 
 
@@ -145,7 +140,6 @@ send or receive a byte of data
 
 => These addressing modes can be combined **with indexed addressing, when x=1,** the term (X) is added in the target address calculation.
 
-=> flag 'b'? based ? ???? , flag 'p'? program counter ? ????. 
 
 * i and n bits in Format 3 and 4 are used to specify how the
 target address is used.
