@@ -181,3 +181,25 @@ addressing mode.
 
 * Macro : "shorthand" for a sequence of other statements.
 
+## CISC (Complex Instruction Set Computers)
+
+* Large and complicated instruction sets provided
+
+* Several different instruction formats and length
+
+* Many different addressing modes
+
+* Implementation in h/w tends to be complex 
+
+## RISC (Reduced Instruction Set Computers)
+
+* Small number of machine instructions, instruction formats, and addressing modes
+
+* A standard, fixed instruction length , and single-cycle execution 
+
+* Advantages:
+  * simplify the design of processors
+  * faster and less expensive processor developement
+  * greater reliability, faster instruction execution times
+
+
