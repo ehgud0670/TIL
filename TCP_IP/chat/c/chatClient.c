@@ -58,6 +58,5 @@ int main(){
 		}
 		write(sock,buf, ret);
 	}
-
 	return 0;
 }
