@@ -43,8 +43,7 @@ int main(){
   
   printf("%ld \n", sizeof(user.items)/sizeof(unsigned int)); 
 
-  
-//ADD_TANKER
+  //ADD_TANKER
   user.items.offset[TANKER/len] |= 1 << (TANKER % len);
 
   //HAS_ITEM
@@ -68,8 +67,6 @@ int main(){
     printf("탱커 있음.\n");
   else 
     printf("탱커 없음. \n");
-
-
 
   return 0;
 }
