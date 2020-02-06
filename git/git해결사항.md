@@ -17,6 +17,6 @@
 나의 로컬 저장소의 ehgud0670 브랜치와 리모트 저장소인 upstream/ehgud0670 은 동기화(sync)가 되어있는 상태이고, **내가 fork 한 나의 리모트 저장소인 origin은 동기화가 안되어 있는 상태이다!!**
 
 ```
-git push origin ehgud0670 
+% git push origin ehgud0670 
 ```
 브랜치 ehgud0670으로 origin 원격 저장소에 push하면 드디어 **로컬 저장소/ehgud0670, upstream/ehgud0670, origin/ehgud0670 이 모두 동기화(sync)** 가 되었다! 
