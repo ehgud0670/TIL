@@ -23,16 +23,24 @@ MVC 디자인을 가지는 어플리케이션들은 또한 다른 앱들보다 �
 모델 객체는 다른 모델 객체들과 일 대 다 관계를 가질 수도 있는데 그래서 때때로 한 앱의 모델 레이어는 효과적으로 하나이거나 더 많은 객체 그래프일 수 있습니다. ( 하나의 모델 레이어에서 하나의 모델만 있는게 아니라 여러 모델로 그래프화 될 수 있다는 의미 ) 
 <br>앱의 지속적 상태(이 지속적 상태가 파일이든 혹은 데이터베이스든)의 부분인 데이터들은 앱 안으로 데이터들이 로드된 이후 모델 객체들 안에 살아야 합니다. ( 파일이든 데이터베이스든 거기에 있는 데이터들이 앱이 켜져서 앱 쪽 메모리로 로드된 이후에 모델 객체에 있어야 한다는 뜻)
 왜냐하면 모델 객체는 특정한 문제 도메인과 관련된 지식과 전문 지식을 나타내기 때문에, 그들은 비슷한 문제 도메인에서 재사용될 수 있습니다. **이상적으로** 모델 객체는 데이터를 제공하는 뷰 객체에 **명시적으로 연결되어 있지 않아야 하며** 사용자는 해당 데이터를 편집 할 수 있어야 합니다. 사용자 인터페이스 및 프리젠 테이션 문제와 관련해서는 안됩니다. ( 모델 객체가 뷰 관련 문제와 관련되서는 안된다는 얘기)
-## View Objects
 
-A view object is an object in an application that users can see. A view object knows how to draw itself and can respond to user actions. A major purpose of view objects is to display data from the application’s model objects and to enable the editing of that data. Despite this, view objects are typically decoupled from model objects in an MVC application.
+## 뷰 객체 
 
-Because you typically reuse and reconfigure them, view objects provide consistency between applications. Both the UIKit and AppKit frameworks provide collections of view classes, and Interface Builder offers dozens of view objects in its Library.
+뷰 객체는 **사용자가 볼 수 있는** 앱의 객체입니다.
+뷰 객체는 자기 자신을 어떻게 그릴 수 있는 지 알고 있고, 그리고 user action들에 반응할 수 있습니다. 
+뷰 객체의 주요 목적은 어플리케이션 모델 객체의 데이터를 보여주는 것이고 그리고 해당 데이터를 편집할 수 있도록 하는 것입니다. 
+**그럼에도 불구하고, 뷰 객체들은 전형적으로 MVC 패턴의 앱에서는 모델 객체와 분리되어 있습니다.** 
 
-Communication: View objects learn about changes in model data through the application’s controller objects and communicate user-initiated changes—for example, text entered in a text field—through controller objects to an application’s model objects.
+당신은 전형적으로 그들(View Object)을 **재사용하고 재구성**하기 때문에, 뷰 객체들은 어플리케이션 사이에서 일관성을 포함한다.  
+UIKit 와 AppKit 프레임워크는 뷰 클래스들의 컬렉션을 제공하고, 그리고 인터페이스 빌더는 다수의 뷰 객체들을 제공한다. 
+
+통신 : 뷰 객체들은 어플리케이션의 컨트롤러 객체들을 통해 모델 데이터의 변화들을 알게 되고, 
+사용자가 시작한 변경사항(예를 들어, 텍스트 필드에 입력한 텍스트)을 컨트롤러 객체를 통해 앱의 모델 객체들에게 전달합니다.
 
 ## Controller Objects
 
-A controller object acts as an intermediary between one or more of an application’s view objects and one or more of its model objects. Controller objects are thus a conduit through which view objects learn about changes in model objects and vice versa. Controller objects can also perform setup and coordinating tasks for an application and manage the life cycles of other objects.
+컨트롤러 객체는 하나 이상의 뷰 객체들과 하나 이상의 모델 객체들 사이에서 중개자 역할을 합니다. 
+컨트롤러 객체는 따라서 뷰 객체가 모델 객체의 변화에 대해 배우는 통로이고, 또 마찬가지로 모델 객체가 뷰 객체의 변화에 대해 배우는 통로입니다. 
+컨트롤러 객체는 또한 앱의 설정 및 조정 작업을 수행하고 그리고 다른 객체의 life cycle을 관리하기도 합니다.    
 
-Communication: A controller object interprets user actions made in view objects and communicates new or changed data to the model layer. When model objects change, a controller object communicates that new model data to the view objects so that they can display it.
+통신 : 컨트롤러 객체는 뷰 객체에서 수행된 user action들을 해석하고 그리고 user actions들을 토대로 새로운 혹은 변화된 데이터 정보를 모델 객체에게 전달합니다. 모델 객체에 변화가 있을 때, 컨트롤러 객체는 새로운 모델 데이터를 뷰 객체에 전달한다, 그래야 뷰 객체들이 변화된 데이터를 나타낼 수 있다. 
